@@ -611,3 +611,7 @@ body.cursor-hover .cursor-ring { background: rgba(37,99,235,0.08); border-color:
 /* accent text needs AA contrast on white -> use brand blue (icons stay sky) */
 .eyebrow { color: var(--accent-blue); }
 .link-arrow { color: var(--accent-blue); }
+
+/* partner trust-bar logos (real marks where licensed, wordmarks otherwise) */
+.partner-logo { height: 20px; width: auto; display: block; }
+.partner-name { font-weight: 600; }

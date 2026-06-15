@@ -210,13 +210,16 @@
     <section class="section section--tight trust">
       <div class="container">
         <p class="trust-label reveal">Trusted technology partners</p>
+        <!-- To add an official brand logo (you must be licensed to display it): drop the SVG into
+             assets/img/partners/<slug>.svg and add an <img class="partner-logo"> before the name,
+             exactly like Cisco / Palo Alto below. -->
         <div class="partners reveal" data-stagger="80">
-          <span class="partner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 14c2-4 5-4 7 0M13 10c2-4 5-4 7 0"/></svg> Cisco</span>
-          <span class="partner"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z"/></svg> Microsoft</span>
-          <span class="partner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg> CrowdStrike</span>
-          <span class="partner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 4.5-3.2 8.3-8 9.5C7.2 20.3 4 16.5 4 12V7l8-4z"/></svg> Palo Alto</span>
-          <span class="partner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12l4 4 12-12"/><path d="M4 18l4 4 4-4"/></svg> SentinelOne</span>
-          <span class="partner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="12" r="3"/><path d="M11 12h9M17 12v4"/></svg> BeyondTrust</span>
+          <span class="partner"><img class="partner-logo" src="assets/img/partners/cisco.svg" alt="" aria-hidden="true" /><span class="partner-name">Cisco</span></span>
+          <span class="partner"><span class="partner-name">Microsoft</span></span>
+          <span class="partner"><span class="partner-name">CrowdStrike</span></span>
+          <span class="partner"><img class="partner-logo" src="assets/img/partners/paloaltonetworks.svg" alt="" aria-hidden="true" /><span class="partner-name">Palo Alto Networks</span></span>
+          <span class="partner"><span class="partner-name">SentinelOne</span></span>
+          <span class="partner"><span class="partner-name">BeyondTrust</span></span>
         </div>
         <div class="stats reveal" data-stagger="120" style="margin-top: clamp(40px,5vw,64px);">
           <div class="stat"><div class="num"><span data-count="500" data-suffix="+">0</span></div><div class="label">Enterprise clients secured</div></div>
