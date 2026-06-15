@@ -619,3 +619,10 @@ body.cursor-hover .cursor-ring { background: rgba(37,99,235,0.08); border-color:
 /* all-wordmark trust bar: uniform, clean, brand-blue on hover */
 .partner-name { font-weight: 700; letter-spacing: -0.01em; }
 .partner:hover .partner-name { color: var(--accent-blue); }
+
+/* option B: official logos at a uniform size; wordmark shows until a file exists */
+.partner-logo { display: none; height: 28px; width: auto; max-width: 150px; object-fit: contain; }
+.partner.has-logo .partner-logo { display: block; }
+.partner.has-logo .partner-name { display: none; }
+.partner.has-logo { filter: grayscale(1); opacity: 0.66; }       /* unify mismatched logos */
+.partner.has-logo:hover { filter: none; opacity: 1; }            /* reveal true colors on hover */

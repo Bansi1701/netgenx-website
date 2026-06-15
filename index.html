@@ -210,16 +210,15 @@
     <section class="section section--tight trust">
       <div class="container">
         <p class="trust-label reveal">Trusted technology partners</p>
-        <!-- Uniform brand wordmarks. To switch a brand to its official logo (only if licensed to
-             display it): drop assets/img/partners/<slug>.svg and add <img class="partner-logo"
-             src="assets/img/partners/<slug>.svg" alt="" aria-hidden="true" /> before its name. -->
+        <!-- Each brand shows its official logo from assets/img/partners/<slug>.svg (.svg or .png),
+             normalized to a uniform height. Until a file is present, a clean wordmark shows instead. -->
         <div class="partners reveal" data-stagger="80">
-          <span class="partner"><span class="partner-name">Cisco</span></span>
-          <span class="partner"><span class="partner-name">Microsoft</span></span>
-          <span class="partner"><span class="partner-name">CrowdStrike</span></span>
-          <span class="partner"><span class="partner-name">Palo Alto Networks</span></span>
-          <span class="partner"><span class="partner-name">SentinelOne</span></span>
-          <span class="partner"><span class="partner-name">BeyondTrust</span></span>
+          <span class="partner"><img class="partner-logo" src="assets/img/partners/cisco.svg" alt="Cisco" loading="lazy" onload="this.closest('.partner').classList.add('has-logo')" onerror="this.remove()" /><span class="partner-name">Cisco</span></span>
+          <span class="partner"><img class="partner-logo" src="assets/img/partners/microsoft.svg" alt="Microsoft" loading="lazy" onload="this.closest('.partner').classList.add('has-logo')" onerror="this.remove()" /><span class="partner-name">Microsoft</span></span>
+          <span class="partner"><img class="partner-logo" src="assets/img/partners/crowdstrike.svg" alt="CrowdStrike" loading="lazy" onload="this.closest('.partner').classList.add('has-logo')" onerror="this.remove()" /><span class="partner-name">CrowdStrike</span></span>
+          <span class="partner"><img class="partner-logo" src="assets/img/partners/paloaltonetworks.svg" alt="Palo Alto Networks" loading="lazy" onload="this.closest('.partner').classList.add('has-logo')" onerror="this.remove()" /><span class="partner-name">Palo Alto Networks</span></span>
+          <span class="partner"><img class="partner-logo" src="assets/img/partners/sentinelone.svg" alt="SentinelOne" loading="lazy" onload="this.closest('.partner').classList.add('has-logo')" onerror="this.remove()" /><span class="partner-name">SentinelOne</span></span>
+          <span class="partner"><img class="partner-logo" src="assets/img/partners/beyondtrust.svg" alt="BeyondTrust" loading="lazy" onload="this.closest('.partner').classList.add('has-logo')" onerror="this.remove()" /><span class="partner-name">BeyondTrust</span></span>
         </div>
         <div class="stats reveal" data-stagger="120" style="margin-top: clamp(40px,5vw,64px);">
           <div class="stat"><div class="num"><span data-count="500" data-suffix="+">0</span></div><div class="label">Enterprise clients secured</div></div>
