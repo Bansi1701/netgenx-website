@@ -1,0 +1,86 @@
+/* =========================================================
+   NetGenX — Design Tokens  (Professional Light Theme)
+   Securing the Next Generation of Enterprise IT
+   ========================================================= */
+
+:root {
+  /* ---- Surfaces / backgrounds ---- */
+  --bg-primary: #FFFFFF;
+  --bg-primary-2: #EEF3FB;     /* gradient end / soft */
+  --bg-elevated: #FFFFFF;
+  --bg-tint: #F4F7FC;          /* alternating section wash */
+  --bg-surface: #FFFFFF;       /* cards */
+  --bg-surface-hover: #F7FAFF;
+  --bg-surface-strong: #FFFFFF;
+
+  /* ---- Brand accents (matches the blue logo) ---- */
+  --accent-blue: #2563EB;
+  --accent-blue-bright: #4F86F7;
+  --accent-cyan: #0EA5E9;      /* sky */
+  --accent-teal: #10B981;      /* success */
+  --accent-deep: #1E40AF;
+  --accent-glow: rgba(37, 99, 235, 0.18);
+
+  /* ---- Text ---- */
+  --text-primary: #0E1B2F;     /* deep navy */
+  --text-secondary: #51607A;
+  --text-muted: #8893A7;
+  --text-faint: #C2CADA;
+
+  /* ---- Lines ---- */
+  --border: rgba(15, 23, 42, 0.09);
+  --border-strong: rgba(15, 23, 42, 0.16);
+  --border-accent: rgba(37, 99, 235, 0.40);
+
+  /* ---- Gradients ---- */
+  --grad-accent: linear-gradient(135deg, #2563EB 0%, #0EA5E9 100%);
+  --grad-accent-soft: linear-gradient(135deg, rgba(37,99,235,0.10) 0%, rgba(14,165,233,0.10) 100%);
+  --grad-text: linear-gradient(115deg, #0E1B2F 0%, #2563EB 55%, #0EA5E9 100%);
+  --grad-cta: linear-gradient(120deg, #1E50C8 0%, #2563EB 45%, #0EA5E9 105%);
+  --grad-radial-hero: radial-gradient(60% 50% at 50% 0%, rgba(37,99,235,0.10) 0%, rgba(255,255,255,0) 70%);
+
+  /* ---- Typography ---- */
+  --font-display: 'Inter', 'SF Pro Display', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --text-hero: clamp(42px, 6vw, 88px);
+  --text-h1: clamp(34px, 4.4vw, 60px);
+  --text-h2: clamp(26px, 3vw, 44px);
+  --text-h3: clamp(20px, 2vw, 26px);
+  --text-body-lg: clamp(17px, 1.4vw, 20px);
+  --text-body: 17px;
+  --text-small: 14px;
+  --text-eyebrow: 13px;
+
+  /* ---- Spacing ---- */
+  --section-gap: clamp(80px, 10vw, 140px);
+  --container: 1400px;
+  --container-narrow: 1080px;
+  --gutter: clamp(20px, 5vw, 48px);
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* ---- Shadows / glow (soft, professional — not neon) ---- */
+  --glow-blue: 0 12px 30px rgba(37, 99, 235, 0.22);
+  --glow-blue-strong: 0 18px 44px rgba(37, 99, 235, 0.30);
+  --glow-cyan: 0 12px 30px rgba(14, 165, 233, 0.22);
+  --glow-card: 0 22px 48px rgba(15, 40, 90, 0.12);
+  --shadow-card: 0 8px 24px rgba(15, 40, 90, 0.07);
+  --shadow-nav: 0 6px 24px rgba(15, 40, 90, 0.08);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.18s;
+  --dur: 0.4s;
+  --dur-slow: 0.8s;
+
+  /* ---- Layout ---- */
+  --nav-h: 76px;
+  --z-cursor: 9999;
+  --z-nav: 1000;
+  --z-overlay: 1100;
+}
