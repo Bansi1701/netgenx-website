@@ -615,3 +615,7 @@ body.cursor-hover .cursor-ring { background: rgba(37,99,235,0.08); border-color:
 /* partner trust-bar logos (real marks where licensed, wordmarks otherwise) */
 .partner-logo { height: 20px; width: auto; display: block; }
 .partner-name { font-weight: 600; }
+
+/* all-wordmark trust bar: uniform, clean, brand-blue on hover */
+.partner-name { font-weight: 700; letter-spacing: -0.01em; }
+.partner:hover .partner-name { color: var(--accent-blue); }
