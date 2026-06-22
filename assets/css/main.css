@@ -665,3 +665,14 @@ body.cursor-hover .cursor-ring { background: rgba(37,99,235,0.08); border-color:
 .mega-feature .link-arrow { font-size: 14px; }
 
 @media (max-width: 1024px) { .mega { display: none; } }   /* mobile uses the full-screen overlay */
+
+/* =========================================================
+   IMAGE CARDS — illustration header (non-square, rounded)
+   ========================================================= */
+.has-media { padding: 0; overflow: hidden; }
+.card-media { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--accent-blue); }
+.card-body { display: flex; flex-direction: column; gap: 14px; padding: clamp(20px, 2.2vw, 28px); flex: 1; }
+.pillar.has-media { justify-content: flex-start; }
+.pillar.has-media .card-body { gap: 12px; }
+.pillar.has-media .p-num { top: 14px; right: 18px; z-index: 2; -webkit-text-stroke-color: rgba(255,255,255,0.78); opacity: 0.95; }
+.card.has-media:hover .card-media { transform: none; }

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" fill="none" role="img" aria-label="Service Desk illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="225" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E40AF"/><stop offset="0.5" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <radialGradient id="gl" cx="0.5" cy="0.38" r="0.65"><stop stop-color="#BBD3FF" stop-opacity="0.38"/><stop offset="1" stop-color="#BBD3FF" stop-opacity="0"/></radialGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.12"/></pattern>
+  </defs>
+  <rect width="400" height="225" fill="url(#bg)"/>
+  <rect width="400" height="225" fill="url(#dots)"/>
+  <rect width="400" height="225" fill="url(#gl)"/>
+  <g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M162 122 v-10 a38 38 0 0 1 76 0 v10"/><path d="M236 146 v6 a10 10 0 0 1 -10 10 h-16"/></g>
+<rect x="152" y="118" width="16" height="30" rx="7" fill="#9BE3FF"/><rect x="232" y="118" width="16" height="30" rx="7" fill="#9BE3FF"/>
+<g stroke="#5EEAD4" stroke-width="2.2" opacity=".7" fill="none"><path d="M118 92 a44 44 0 0 0 0 56"/><path d="M102 80 a60 60 0 0 0 0 80"/></g>
+<rect x="262" y="150" width="44" height="30" rx="8" fill="#5EEAD4" opacity=".9"/><path d="M278 180 l-6 10 14 -10" fill="#5EEAD4"/>
+</svg>

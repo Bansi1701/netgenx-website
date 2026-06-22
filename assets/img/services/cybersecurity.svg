@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" fill="none" role="img" aria-label="Cybersecurity illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="225" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E40AF"/><stop offset="0.5" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <radialGradient id="gl" cx="0.5" cy="0.38" r="0.65"><stop stop-color="#BBD3FF" stop-opacity="0.38"/><stop offset="1" stop-color="#BBD3FF" stop-opacity="0"/></radialGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.12"/></pattern>
+  </defs>
+  <rect width="400" height="225" fill="url(#bg)"/>
+  <rect width="400" height="225" fill="url(#dots)"/>
+  <rect width="400" height="225" fill="url(#gl)"/>
+  <path d="M200 52 L258 76 V112 C258 148 234 168 200 180 C166 168 142 148 142 112 V76 Z" stroke="#fff" stroke-width="3" fill="rgba(255,255,255,.06)" stroke-linejoin="round"/>
+<path d="M181 113 l13 13 26 -30" stroke="#5EEAD4" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<g stroke="#9BE3FF" stroke-width="2" opacity=".5" fill="none"><path d="M112 92 a96 96 0 0 0 0 44"/><path d="M288 92 a96 96 0 0 1 0 44"/></g>
+<circle cx="108" cy="66" r="3.5" fill="#9BE3FF"/><circle cx="296" cy="160" r="3.5" fill="#9BE3FF"/>
+</svg>
