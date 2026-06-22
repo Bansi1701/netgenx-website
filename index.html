@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/tokens.css?v=12" />
-  <link rel="stylesheet" href="assets/css/main.css?v=12" />
-  <link rel="stylesheet" href="assets/css/cinematic.css?v=12" />
+  <link rel="stylesheet" href="assets/css/tokens.css?v=13" />
+  <link rel="stylesheet" href="assets/css/main.css?v=13" />
+  <link rel="stylesheet" href="assets/css/cinematic.css?v=13" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -149,9 +149,79 @@
         <span class="blob b3"></span>
       </div>
       <!-- animated NetGenX logo mark: the network coming alive -->
-      <div class="hero-photo">
-        <img src="assets/img/hero.jpg" alt="NetGenX-secured enterprise data center" loading="eager" />
-      </div>
+      <svg class="hero-logo" id="hero-logo" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="ngx-h-grad" x1="30" y1="39" x2="170" y2="161" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#0EA5E9"/><stop offset="0.55" stop-color="#2563EB"/><stop offset="1" stop-color="#1E40AF"/>
+          </linearGradient>
+          <radialGradient id="ngx-h-core" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#BBD3FF"/><stop offset="1" stop-color="#2563EB"/>
+          </radialGradient>
+          <filter id="ngx-glow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="2.4" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- slowly rotating lattice -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="64s" repeatCount="indefinite"/>
+
+          <!-- spokes + perimeter, drawing themselves in -->
+          <g stroke="url(#ngx-h-grad)" stroke-width="2" stroke-linecap="round" filter="url(#ngx-glow)" opacity="0.92">
+            <line x1="170" y1="100" x2="100" y2="100" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.9s" begin="0.0s" fill="freeze"/></line>
+            <line x1="135" y1="39"  x2="100" y2="100" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.9s" begin="0.1s" fill="freeze"/></line>
+            <line x1="65"  y1="39"  x2="100" y2="100" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.9s" begin="0.2s" fill="freeze"/></line>
+            <line x1="30"  y1="100" x2="100" y2="100" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.9s" begin="0.3s" fill="freeze"/></line>
+            <line x1="65"  y1="161" x2="100" y2="100" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.9s" begin="0.4s" fill="freeze"/></line>
+            <line x1="135" y1="161" x2="100" y2="100" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.9s" begin="0.5s" fill="freeze"/></line>
+            <line x1="170" y1="100" x2="135" y2="161" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.7s" begin="0.6s" fill="freeze"/></line>
+            <line x1="135" y1="161" x2="65"  y2="161" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.7s" begin="0.7s" fill="freeze"/></line>
+            <line x1="65"  y1="161" x2="30"  y2="100" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.7s" begin="0.8s" fill="freeze"/></line>
+            <line x1="30"  y1="100" x2="65"  y2="39"  pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.7s" begin="0.9s" fill="freeze"/></line>
+            <line x1="65"  y1="39"  x2="135" y2="39"  pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.7s" begin="1.0s" fill="freeze"/></line>
+            <line x1="135" y1="39"  x2="170" y2="100" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.7s" begin="1.1s" fill="freeze"/></line>
+          </g>
+
+          <!-- pulsing outer nodes -->
+          <g fill="url(#ngx-h-grad)" filter="url(#ngx-glow)">
+            <circle cx="170" cy="100" r="6"><animate attributeName="r" values="5.5;8;5.5" dur="3s" begin="0.0s" repeatCount="indefinite"/></circle>
+            <circle cx="135" cy="39"  r="6"><animate attributeName="r" values="5.5;8;5.5" dur="3s" begin="0.5s" repeatCount="indefinite"/></circle>
+            <circle cx="65"  cy="39"  r="6"><animate attributeName="r" values="5.5;8;5.5" dur="3s" begin="1.0s" repeatCount="indefinite"/></circle>
+            <circle cx="30"  cy="100" r="6"><animate attributeName="r" values="5.5;8;5.5" dur="3s" begin="1.5s" repeatCount="indefinite"/></circle>
+            <circle cx="65"  cy="161" r="6"><animate attributeName="r" values="5.5;8;5.5" dur="3s" begin="2.0s" repeatCount="indefinite"/></circle>
+            <circle cx="135" cy="161" r="6"><animate attributeName="r" values="5.5;8;5.5" dur="3s" begin="2.5s" repeatCount="indefinite"/></circle>
+          </g>
+
+          <!-- data packets traveling the spokes into the core -->
+          <g fill="#BBD3FF">
+            <circle r="3"><animateMotion path="M170,100 L100,100" dur="2.4s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" dur="2.4s" begin="0.2s" repeatCount="indefinite"/></circle>
+            <circle r="3"><animateMotion path="M135,39 L100,100"  dur="2.4s" begin="0.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" dur="2.4s" begin="0.6s" repeatCount="indefinite"/></circle>
+            <circle r="3"><animateMotion path="M65,39 L100,100"   dur="2.4s" begin="1.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" dur="2.4s" begin="1.0s" repeatCount="indefinite"/></circle>
+            <circle r="3"><animateMotion path="M30,100 L100,100"  dur="2.4s" begin="1.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" dur="2.4s" begin="1.4s" repeatCount="indefinite"/></circle>
+            <circle r="3"><animateMotion path="M65,161 L100,100"  dur="2.4s" begin="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" dur="2.4s" begin="1.8s" repeatCount="indefinite"/></circle>
+            <circle r="3"><animateMotion path="M135,161 L100,100" dur="2.4s" begin="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" dur="2.4s" begin="2.2s" repeatCount="indefinite"/></circle>
+          </g>
+
+          <!-- a pulse circling the perimeter -->
+          <circle r="3.4" fill="#0EA5E9" filter="url(#ngx-glow)">
+            <animateMotion path="M170,100 L135,161 L65,161 L30,100 L65,39 L135,39 Z" dur="7s" repeatCount="indefinite" rotate="auto"/>
+          </circle>
+        </g>
+
+        <!-- breathing core with radar pings (does not rotate) -->
+        <circle cx="100" cy="100" r="12" fill="none" stroke="#2563EB" stroke-width="1.5">
+          <animate attributeName="r" values="12;74" dur="3.4s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.55;0" dur="3.4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="100" r="12" fill="none" stroke="#0EA5E9" stroke-width="1.5">
+          <animate attributeName="r" values="12;74" dur="3.4s" begin="1.7s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.5;0" dur="3.4s" begin="1.7s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="100" r="11" fill="url(#ngx-h-core)" filter="url(#ngx-glow)">
+          <animate attributeName="r" values="10;12.5;10" dur="2.4s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
       <div class="container">
         <div class="hero-inner">
           <span class="hero-badge"><span class="dot"></span> 24/7 SOC · Live across Canada &amp; globally</span>
@@ -455,10 +525,10 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=12" defer></script>
+  <script src="assets/js/main.js?v=13" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
-  <script src="assets/js/cinematic.js?v=12" defer></script>
+  <script src="assets/js/cinematic.js?v=13" defer></script>
 </body>
 </html>

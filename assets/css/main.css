@@ -677,11 +677,5 @@ body.cursor-hover .cursor-ring { background: rgba(37,99,235,0.08); border-color:
 .pillar.has-media .p-num { top: 14px; right: 18px; z-index: 2; -webkit-text-stroke-color: rgba(255,255,255,0.78); opacity: 0.95; }
 .card.has-media:hover .card-media { transform: none; }
 
-/* ---- hero real photo (non-square rounded frame) ---- */
-.hero-photo { position: absolute; right: 4%; top: 50%; transform: translateY(-50%); width: clamp(320px, 42vw, 640px); z-index: 1; pointer-events: none; }
-.hero-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 26px; box-shadow: 0 40px 90px rgba(37, 99, 235, 0.28), 0 10px 30px rgba(15,40,90,.18); outline: 1px solid rgba(255,255,255,0.55); outline-offset: -1px; }
-/* keep the headline clear of the photo on wide screens */
-@media (min-width: 1201px) { .hero .hero-inner { max-width: 600px; } }
-@media (max-width: 1200px) { .hero-photo { display: none; } }
-/* gentle cohesion grade on all photos */
-.card-media, .hero-photo img { filter: saturate(1.04) contrast(1.02); }
+/* gentle cohesion grade on card photos */
+.card-media { filter: saturate(1.04) contrast(1.02); }
