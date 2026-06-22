@@ -9,10 +9,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/tokens.css?v=8" />
-  <link rel="stylesheet" href="assets/css/main.css?v=8" />
-  <link rel="stylesheet" href="assets/css/cinematic.css?v=8" />
-  <style>.mega{position:absolute;opacity:0;visibility:hidden}</style>
+  <link rel="stylesheet" href="assets/css/tokens.css?v=10" />
+  <link rel="stylesheet" href="assets/css/main.css?v=10" />
+  <link rel="stylesheet" href="assets/css/cinematic.css?v=10" />
+  <style>.mega{opacity:0;visibility:hidden}</style>
 </head>
 <body>
   <div class="page-veil"><img src="assets/img/logo-mark.svg" alt="" /></div>
@@ -32,18 +32,40 @@
             </a>
             <div class="mega" role="menu" aria-label="Services">
               <div class="container">
-                <div class="mega-grid">
-                  <a class="mega-item" href="service-cybersecurity.html" role="menuitem"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v5c0 4.4-3 8.3-7 9.5C8 19.3 5 15.4 5 11V6l7-3z"/></svg></span><span class="mega-txt"><span class="mega-t">Cybersecurity</span><span class="mega-d">24/7 SOC, EDR &amp; rapid incident response</span></span></a>
-                  <a class="mega-item" href="service-network.html" role="menuitem"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="2.4"/><circle cx="5" cy="6" r="1.6"/><circle cx="19" cy="6" r="1.6"/><circle cx="5" cy="18" r="1.6"/><circle cx="19" cy="18" r="1.6"/><path d="M6.5 7l4 4M17.5 7l-4 4M6.5 17l4-4M17.5 17l-4-4"/></svg></span><span class="mega-txt"><span class="mega-t">Network Infrastructure</span><span class="mega-d">SD-WAN, segmentation &amp; monitoring</span></span></a>
-                  <a class="mega-item" href="service-pam.html" role="menuitem"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="12" r="3.2"/><path d="M11 12h9M17 12v4M20 12v3"/></svg></span><span class="mega-txt"><span class="mega-t">Privileged Access (PAM)</span><span class="mega-d">Vault, rotate &amp; audit credentials</span></span></a>
-                  <a class="mega-item" href="service-idam.html" role="menuitem"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 20a6.5 6.5 0 0113 0"/></svg></span><span class="mega-txt"><span class="mega-t">Identity &amp; Access (IDAM)</span><span class="mega-d">SSO, MFA &amp; lifecycle governance</span></span></a>
-                  <a class="mega-item" href="service-servicedesk.html" role="menuitem"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12a7 7 0 0114 0M4 12v4a2 2 0 002 2M20 12v4a2 2 0 01-2 2h-3"/></svg></span><span class="mega-txt"><span class="mega-t">Service Desk</span><span class="mega-d">24/7 managed IT support, ITIL-aligned</span></span></a>
-                  <a class="mega-item" href="service-cloud.html" role="menuitem"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 18a4 4 0 010-8 5 5 0 019.6-1.4A3.5 3.5 0 0117 18H7z"/><path d="M12 16v-5M9.5 13L12 10.5 14.5 13"/></svg></span><span class="mega-txt"><span class="mega-t">Cloud Solutions</span><span class="mega-d">Migration, cloud security &amp; FinOps</span></span></a>
-                  <a class="mega-item" href="service-itinfrastructure.html" role="menuitem"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><span class="mega-txt"><span class="mega-t">IT Infrastructure</span><span class="mega-d">Datacenter, monitoring &amp; end-user computing</span></span></a>
-                </div>
-                <div class="mega-foot">
-                  <span>One accountable partner for every layer of enterprise IT.</span>
-                  <a class="link-arrow" href="services.html">View all services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                <div class="mega-cols" style="--cols:4">
+                  <div class="mega-col">
+                    <h4>Security &amp; Identity</h4>
+                    <div class="mega-links">
+                      <a href="service-cybersecurity.html">Cybersecurity &amp; SOC</a>
+                      <a href="service-pam.html">Privileged Access (PAM)</a>
+                      <a href="service-idam.html">Identity &amp; Access (IDAM)</a>
+                      <a href="service-itinfrastructure.html#security">Endpoint &amp; Email Security</a>
+                    </div>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Network &amp; Cloud</h4>
+                    <div class="mega-links">
+                      <a href="service-network.html">Network Infrastructure</a>
+                      <a href="service-cloud.html">Cloud Solutions</a>
+                      <a href="service-itinfrastructure.html#datacenter">Datacenter &amp; Disaster Recovery</a>
+                      <a href="service-itinfrastructure.html#cloud">Cloud &amp; Email Migration</a>
+                    </div>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Operations &amp; Workplace</h4>
+                    <div class="mega-links">
+                      <a href="service-itinfrastructure.html">IT Infrastructure</a>
+                      <a href="service-servicedesk.html">Service Desk</a>
+                      <a href="service-itinfrastructure.html#monitoring">Monitoring &amp; Asset Management</a>
+                      <a href="service-itinfrastructure.html#euc">End-User Computing</a>
+                    </div>
+                  </div>
+                  <div class="mega-col mega-feature">
+                    <h4>Not sure where to start?</h4>
+                    <p>Get a free assessment — we'll map your whole estate and hand you a prioritized plan within 24 hours.</p>
+                    <a class="btn btn-primary" href="contact.html">Get a Free Assessment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                    <a class="link-arrow" href="services.html">View all services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -54,14 +76,28 @@
             </a>
             <div class="mega" role="menu" aria-label="Solutions">
               <div class="container">
-                <div class="mega-grid">
-                  <a class="mega-item" href="services.html" role="menuitem"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M3 12h18M3 17h12"/></svg></span><span class="mega-txt"><span class="mega-t">Managed Security (MSSP)</span><span class="mega-d">End-to-end monitoring &amp; response</span></span></a>
-                  <a class="mega-item" href="services.html" role="menuitem"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 8l7-5 7 5"/></svg></span><span class="mega-txt"><span class="mega-t">Zero Trust Architecture</span><span class="mega-d">Identity-first security model</span></span></a>
-                  <a class="mega-item" href="services.html" role="menuitem"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4zM4 10h16"/></svg></span><span class="mega-txt"><span class="mega-t">Compliance &amp; Audit</span><span class="mega-d">SOC 2, ISO 27001, PIPEDA &amp; HIPAA</span></span></a>
-                </div>
-                <div class="mega-foot">
-                  <span>Cross-cutting programs that tie every layer together.</span>
-                  <a class="link-arrow" href="services.html">Explore solutions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                <div class="mega-cols" style="--cols:3">
+                  <div class="mega-col">
+                    <h4>Programs</h4>
+                    <div class="mega-links">
+                      <a href="services.html">Managed Security (MSSP)</a>
+                      <a href="services.html">Zero Trust Architecture</a>
+                      <a href="services.html">Compliance &amp; Audit</a>
+                    </div>
+                  </div>
+                  <div class="mega-col">
+                    <h4>By outcome</h4>
+                    <div class="mega-links">
+                      <a href="services.html">Reduce breach risk</a>
+                      <a href="service-itinfrastructure.html">Consolidate IT vendors</a>
+                      <a href="service-cloud.html">Control cloud spend</a>
+                    </div>
+                  </div>
+                  <div class="mega-col mega-feature">
+                    <h4>One accountable partner</h4>
+                    <p>Cross-cutting programs that tie every layer of your IT together.</p>
+                    <a class="btn btn-primary" href="contact.html">Get Started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -323,10 +359,10 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=8" defer></script>
+  <script src="assets/js/main.js?v=10" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
-  <script src="assets/js/cinematic.js?v=8" defer></script>
+  <script src="assets/js/cinematic.js?v=10" defer></script>
 </body>
 </html>
