@@ -684,12 +684,12 @@ body.cursor-hover .cursor-ring { background: rgba(37,99,235,0.08); border-color:
 .hero .hero-mesh { display: none; }              /* map now carries the background */
 .hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
 /* full map (no crop -> North America renders correctly), muted to a faint texture */
-.hero-bg img { width: 100%; height: 100%; object-fit: contain; object-position: center 46%; opacity: 0.5; }
+.hero-bg img { width: 100%; height: 100%; object-fit: contain; object-position: center 46%; opacity: 0.72; }
 /* one overlay: a soft white spotlight that clears a stage for the logo (right)
    + a left scrim so the headline stays crisp */
 .hero-bg::after { content: ""; position: absolute; inset: 0; background:
-  radial-gradient(36% 56% at 79% 50%, rgba(255,255,255,0.85), rgba(255,255,255,0) 70%),
-  linear-gradient(90deg, rgba(255,255,255,0.90) 0%, rgba(255,255,255,0.55) 30%, rgba(255,255,255,0.12) 56%, rgba(255,255,255,0) 78%); }
+  radial-gradient(34% 52% at 80% 50%, rgba(255,255,255,0.70), rgba(255,255,255,0) 72%),
+  linear-gradient(90deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.50) 30%, rgba(255,255,255,0.10) 58%, rgba(255,255,255,0) 80%); }
 @media (max-width: 760px){
   .hero-bg img { object-fit: cover; opacity: 0.32; }
   .hero-bg::after { background: linear-gradient(180deg, rgba(255,255,255,0.84), rgba(255,255,255,0.7)); }
