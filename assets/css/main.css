@@ -681,8 +681,16 @@ body.cursor-hover .cursor-ring { background: rgba(37,99,235,0.08); border-color:
 .card-media { filter: saturate(1.04) contrast(1.02); }
 
 /* ---- hero world-map background (behind logo + headline) ---- */
+.hero .hero-mesh { display: none; }              /* map now carries the background */
 .hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
-.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.hero-bg::after { content: ""; position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.66) 34%, rgba(255,255,255,0.15) 66%, rgba(255,255,255,0) 100%); }
-@media (max-width: 760px){ .hero-bg::after { background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.72)); } }
+/* full map (no crop -> North America renders correctly), muted to a faint texture */
+.hero-bg img { width: 100%; height: 100%; object-fit: contain; object-position: center 46%; opacity: 0.5; }
+/* one overlay: a soft white spotlight that clears a stage for the logo (right)
+   + a left scrim so the headline stays crisp */
+.hero-bg::after { content: ""; position: absolute; inset: 0; background:
+  radial-gradient(36% 56% at 79% 50%, rgba(255,255,255,0.85), rgba(255,255,255,0) 70%),
+  linear-gradient(90deg, rgba(255,255,255,0.90) 0%, rgba(255,255,255,0.55) 30%, rgba(255,255,255,0.12) 56%, rgba(255,255,255,0) 78%); }
+@media (max-width: 760px){
+  .hero-bg img { object-fit: cover; opacity: 0.32; }
+  .hero-bg::after { background: linear-gradient(180deg, rgba(255,255,255,0.84), rgba(255,255,255,0.7)); }
+}
