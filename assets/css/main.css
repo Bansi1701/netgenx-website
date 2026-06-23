@@ -679,3 +679,10 @@ body.cursor-hover .cursor-ring { background: rgba(37,99,235,0.08); border-color:
 
 /* gentle cohesion grade on card photos */
 .card-media { filter: saturate(1.04) contrast(1.02); }
+
+/* ---- hero world-map background (behind logo + headline) ---- */
+.hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero-bg::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.66) 34%, rgba(255,255,255,0.15) 66%, rgba(255,255,255,0) 100%); }
+@media (max-width: 760px){ .hero-bg::after { background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.72)); } }
