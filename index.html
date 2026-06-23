@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/tokens.css?v=17" />
-  <link rel="stylesheet" href="assets/css/main.css?v=17" />
-  <link rel="stylesheet" href="assets/css/cinematic.css?v=17" />
+  <link rel="stylesheet" href="assets/css/tokens.css?v=18" />
+  <link rel="stylesheet" href="assets/css/main.css?v=18" />
+  <link rel="stylesheet" href="assets/css/cinematic.css?v=18" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -148,7 +148,10 @@
         <span class="blob b2"></span>
         <span class="blob b3"></span>
       </div>
-      <div class="hero-bg" aria-hidden="true"><img src="assets/img/hero-map.jpg" alt="" /></div>
+      <div class="hero-bg" aria-hidden="true">
+        <img class="hero-bg-fallback" src="assets/img/hero-map.jpg" alt="" />
+        <div id="hero-map"></div>
+      </div>
       <!-- animated NetGenX logo mark: the network coming alive -->
       <svg class="hero-logo" id="hero-logo" viewBox="0 0 200 200" fill="none" aria-hidden="true">
         <defs>
@@ -526,10 +529,11 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=17" defer></script>
+  <script src="assets/js/main.js?v=18" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
-  <script src="assets/js/cinematic.js?v=17" defer></script>
+  <script src="assets/js/cinematic.js?v=18" defer></script>
+  <script src="assets/js/hero-map.js?v=18" defer></script>
 </body>
 </html>
