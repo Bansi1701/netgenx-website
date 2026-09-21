@@ -151,6 +151,14 @@
   /* Contact form: posts to the endpoint in the form's action (a third-party form
      service, since a static host has no backend) and keeps the inline success state
      instead of handing the visitor off to the provider's own page. */
+  const sentModal = document.getElementById('sent-modal');
+  if (sentModal) {
+    const done = sentModal.querySelector('[data-close-sent]');
+    if (done) done.addEventListener('click', () => sentModal.close());
+    /* click outside the card closes it, matching what the backdrop looks like it does */
+    sentModal.addEventListener('click', (e) => { if (e.target === sentModal) sentModal.close(); });
+  }
+
   const form = document.querySelector('form[data-contact-form]');
   if (form) {
     const ok = form.querySelector('.form-success');
@@ -178,7 +186,12 @@
         if (!res.ok || String(data.success) !== 'true') {
           throw new Error(data.message || ('HTTP ' + res.status));
         }
-        if (ok) {
+        /* Confirm in a dialog. Anything without showModal() falls back to the
+           inline message, so the visitor is never left wondering. */
+        const dlg = document.getElementById('sent-modal');
+        if (dlg && typeof dlg.showModal === 'function') {
+          dlg.showModal();
+        } else if (ok) {
           ok.classList.add('show');
           ok.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'center' });
         }

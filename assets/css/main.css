@@ -401,6 +401,22 @@ body.menu-open .mobile-menu a { animation: mLinkIn 0.5s var(--ease-out) forwards
 .form-error.show { display: block; }
 .form-error a { color: inherit; text-decoration: underline; }
 
+/* ---------- Submission confirmation dialog ----------
+   A native <dialog>: focus trapping, Escape to close and an inert background
+   come from the element itself rather than from script. */
+/* margin:auto restores the centring that `* { margin: 0 }` on line 7 strips from
+   the dialog's user-agent style, which otherwise pins it to the top left. */
+.sent-modal { margin: auto; border: 0; padding: 0; background: transparent; max-width: min(440px, calc(100vw - 36px)); color: var(--text-secondary); }
+.sent-modal::backdrop { background: rgba(8, 24, 43, 0.52); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.sent-card { text-align: center; padding: 34px 30px 28px; border-radius: var(--radius-lg); background: var(--bg-surface); border: 1px solid var(--border); box-shadow: 0 24px 60px rgba(15, 40, 90, 0.22); }
+.sent-check { display: inline-flex; align-items: center; justify-content: center; width: 58px; height: 58px; margin-bottom: 16px; border-radius: 50%; background: rgba(16, 185, 129, 0.12); color: var(--accent-teal); }
+.sent-check svg { width: 28px; height: 28px; }
+.sent-card h3 { font-family: var(--font-display); font-weight: 800; font-size: 25px; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 9px; }
+.sent-card p { margin-bottom: 22px; font-size: 15.5px; }
+.sent-modal[open] { animation: sent-pop .28s var(--ease-out) both; }
+@keyframes sent-pop { from { opacity: 0; transform: translateY(14px) scale(.97); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .sent-modal[open] { animation: none; } }
+
 .info-card { padding: 26px 28px; margin-bottom: 18px; }
 .info-card .icon-tile { width: 44px; height: 44px; margin-bottom: 14px; }
 .info-card h4 { font-size: 16px; margin-bottom: 6px; }

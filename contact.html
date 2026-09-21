@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/tokens.css?v=22" />
-  <link rel="stylesheet" href="assets/css/main.css?v=22" />
-  <link rel="stylesheet" href="assets/css/cinematic.css?v=22" />
+  <link rel="stylesheet" href="assets/css/tokens.css?v=23" />
+  <link rel="stylesheet" href="assets/css/main.css?v=23" />
+  <link rel="stylesheet" href="assets/css/cinematic.css?v=23" />
   <style>.mega{opacity:0;visibility:hidden}</style>
 </head>
 <body>
@@ -161,6 +161,8 @@
                    Swap the action URL to change provider; the JS posts to whatever it says. -->
               <input type="hidden" name="_subject" value="New enquiry from netgenx.com" />
               <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_autoresponse"
+                     value="Thank you for contacting NetGenX. We have received your request and a senior engineer will reply within one business day. If it is urgent, call +1 302-302-6612 or simply reply to this email." />
               <input type="hidden" name="_captcha" value="false" />
               <!-- honeypot: real people leave this empty, bots fill it in -->
               <input type="text" name="_honey" tabindex="-1" autocomplete="off"
@@ -344,10 +346,21 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=22" defer></script>
+  <script src="assets/js/main.js?v=23" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
   <script src="assets/js/cinematic.js?v=17" defer></script>
+
+  <dialog class="sent-modal" id="sent-modal" aria-labelledby="sent-title">
+    <div class="sent-card">
+      <span class="sent-check" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.6l5.2 5.2L20 7"/></svg>
+      </span>
+      <h3 id="sent-title">Request sent</h3>
+      <p>Thanks! A NetGenX engineer will reply within one business day. We have emailed a confirmation to the address you gave us.</p>
+      <button type="button" class="btn btn-primary" data-close-sent>Done</button>
+    </div>
+  </dialog>
 </body>
 </html>
