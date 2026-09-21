@@ -315,7 +315,7 @@ body.menu-open .mobile-menu a { animation: mLinkIn 0.5s var(--ease-out) forwards
 .trust { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.015); }
 .trust-label { text-align: center; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 26px; }
 .partners { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(22px, 4vw, 56px); }
-.partner { display: inline-flex; align-items: center; gap: 9px; color: var(--text-secondary); font-weight: 600; font-size: clamp(15px, 1.6vw, 19px); letter-spacing: -0.01em; opacity: .72; filter: grayscale(0.3); transition: opacity var(--dur) var(--ease-out), filter var(--dur) var(--ease-out), transform var(--dur) var(--ease-out); }
+.partner { display: inline-flex; align-items: center; gap: 9px; color: var(--text-secondary); font-weight: 600; font-size: clamp(15px, 1.6vw, 19px); letter-spacing: -0.01em; opacity: .72; filter: grayscale(0.3); transition: color var(--dur) var(--ease-out), opacity var(--dur) var(--ease-out), filter var(--dur) var(--ease-out), transform var(--dur) var(--ease-out); }
 .partner svg { width: 22px; height: 22px; color: var(--accent-cyan); }
 .partner:hover { opacity: 1; filter: none; transform: translateY(-2px); }
 
@@ -397,6 +397,9 @@ body.menu-open .mobile-menu a { animation: mLinkIn 0.5s var(--ease-out) forwards
 .form-note { font-size: 12.5px; color: var(--text-muted); margin-top: 6px; }
 .form-success { display: none; padding: 16px 18px; border-radius: var(--radius-sm); background: rgba(16, 185, 129,0.08); border: 1px solid rgba(16, 185, 129,0.3); color: var(--accent-teal); font-weight: 600; margin-bottom: 18px; }
 .form-success.show { display: block; }
+.form-error { display: none; padding: 16px 18px; border-radius: var(--radius-sm); background: rgba(220, 38, 38, 0.07); border: 1px solid rgba(220, 38, 38, 0.3); color: #B91C1C; font-weight: 600; margin-bottom: 18px; }
+.form-error.show { display: block; }
+.form-error a { color: inherit; text-decoration: underline; }
 
 .info-card { padding: 26px 28px; margin-bottom: 18px; }
 .info-card .icon-tile { width: 44px; height: 44px; margin-bottom: 14px; }
@@ -618,7 +621,39 @@ body.cursor-hover .cursor-ring { background: rgba(37,99,235,0.08); border-color:
 
 /* all-wordmark trust bar: uniform, clean, brand-blue on hover */
 .partner-name { font-weight: 700; letter-spacing: -0.01em; }
-.partner:hover .partner-name { color: var(--accent-blue); }
+/* Hover: lift and zoom a little, and drop the monochrome for the brand's real colour.
+   Each partner carries its own --brand; the two multicolour marks paint per path. */
+.partner:hover, .partner:hover .partner-name { color: var(--brand, var(--accent-blue)); }
+.partner:hover { transform: translateY(-2px) scale(1.08); }
+.partner-mark path { transition: fill var(--dur) var(--ease-out); }
+
+.partner--cisco            { --brand: #1BA0D7; }
+.partner--microsoft        { --brand: #737373; }  /* their wordmark grey; the squares carry the colour */
+.partner--crowdstrike      { --brand: #EC0000; }
+.partner--paloaltonetworks { --brand: #F04E23; }
+.partner--fortinet         { --brand: #EE3124; }
+.partner--zoho             { --brand: #E42527; }
+.partner--manageengine     { --brand: #231F20; }  /* near-black wordmark; the arcs carry the colour */
+.partner--dell             { --brand: #007DB8; }
+.partner--lenovo           { --brand: #E2231A; }
+.partner--hpe              { --brand: #01A982; }
+.partner--veeam            { --brand: #00B336; }
+.partner--commvault        { --brand: #844896; }
+
+/* Microsoft's four squares and ManageEngine's four arcs, in their source colours */
+.partner--microsoft:hover .ms-a { fill: #F25022; }
+.partner--microsoft:hover .ms-b { fill: #7FBA00; }
+.partner--microsoft:hover .ms-c { fill: #00A4EF; }
+.partner--microsoft:hover .ms-d { fill: #FFB900; }
+.partner--manageengine:hover .me-1 { fill: #FFCD22; }
+.partner--manageengine:hover .me-2 { fill: #0078B6; }
+.partner--manageengine:hover .me-3 { fill: #009A50; }
+.partner--manageengine:hover .me-4 { fill: #CA2031; }
+
+/* the colour change still lands under reduced motion; only the zoom goes */
+@media (prefers-reduced-motion: reduce) {
+  .partner:hover { transform: none; }
+}
 
 /* monochrome brand symbols sitting beside each wordmark. Inlined SVG, so they take
    their colour from the wordmark and follow it on hover. Sized optically, not
@@ -629,9 +664,26 @@ body.cursor-hover .cursor-ring { background: rgba(37,99,235,0.08); border-color:
    reads louder than a compact one at the same size. Square marks (Microsoft, Palo Alto)
    take the 17px default; these are trimmed or lifted by eye against them. */
 .partner svg.partner-mark--cisco { height: 13px; }        /* 6 thin bars, very wide */
+.partner svg.partner-mark--zoho { height: 13px; }         /* 4 tilted squares, same wide ratio */
 .partner svg.partner-mark--crowdstrike { height: 17px; }  /* fine line-art, needs size to read */
-.partner svg.partner-mark--beyondtrust { height: 16px; }  /* solid, wide monogram */
-.partner svg.partner-mark--sentinelone { height: 18px; }  /* taller than wide, needs the lift */
+.partner svg.partner-mark--fortinet { height: 16px; }     /* solid grid, reads heavy */
+.partner svg.partner-mark--manageengine { height: 19px; } /* fine open arcs, needs size */
+.partner svg.partner-mark--commvault { height: 18px; }    /* outlined cube, taller than wide */
+
+/* Three brands have no separable symbol: their logo IS the wordmark (Dell's circle,
+   Lenovo's box, the Veeam wordmark). Those run as lockups, sized larger because the
+   mark carries the name on its own. */
+.partner svg.partner-mark--dell { height: 26px; }   /* circle lockup, small inner text */
+.partner svg.partner-mark--lenovo { height: 15px; }
+.partner svg.partner-mark--veeam { height: 12px; }
+
+/* The lockup already says the brand name, so the text is hidden visually but kept in
+   the DOM: display:none would take it from screen readers and from crawlers reading
+   the trust bar. */
+.partner--lockup .partner-name {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
 .partner.has-logo .partner-mark { display: none; }   /* an official full logo supersedes the symbol */
 
 /* option B: official logos at a uniform size; wordmark shows until a file exists */

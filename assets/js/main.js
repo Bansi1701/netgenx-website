@@ -148,14 +148,47 @@
   document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = '2026'; });
 
   /* ---------- Contact form (demo handler) ---------- */
-  const form = document.querySelector('form[data-demo-form]');
+  /* Contact form: posts to the endpoint in the form's action (a third-party form
+     service, since a static host has no backend) and keeps the inline success state
+     instead of handing the visitor off to the provider's own page. */
+  const form = document.querySelector('form[data-contact-form]');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    const ok = form.querySelector('.form-success');
+    const bad = form.querySelector('.form-error');
+    const btn = form.querySelector('button[type="submit"]');
+    const btnText = btn ? btn.innerHTML : '';
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      const ok = form.querySelector('.form-success');
-      if (ok) { ok.classList.add('show'); ok.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'center' }); }
-      form.reset();
+      if (bad) bad.classList.remove('show');
+      if (btn) { btn.disabled = true; btn.innerHTML = 'Sending&hellip;'; }
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form)
+        });
+        /* The provider answers 200 with {"success":"false"} when the sending domain
+           is not activated yet, so the body decides, not the status code. Trusting
+           res.ok alone would show the visitor "Thanks!" while nothing was delivered. */
+        let data = {};
+        try { data = await res.json(); } catch (_) {}
+        if (!res.ok || String(data.success) !== 'true') {
+          throw new Error(data.message || ('HTTP ' + res.status));
+        }
+        if (ok) {
+          ok.classList.add('show');
+          ok.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'center' });
+        }
+        form.reset();
+      } catch (err) {
+        /* never swallow it: the visitor gets the email address as a fallback */
+        if (bad) bad.classList.add('show');
+      } finally {
+        if (btn) { btn.disabled = false; btn.innerHTML = btnText; }
+      }
     });
   }
 })();

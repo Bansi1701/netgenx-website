@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/tokens.css?v=17" />
-  <link rel="stylesheet" href="assets/css/main.css?v=17" />
-  <link rel="stylesheet" href="assets/css/cinematic.css?v=17" />
+  <link rel="stylesheet" href="assets/css/tokens.css?v=22" />
+  <link rel="stylesheet" href="assets/css/main.css?v=22" />
+  <link rel="stylesheet" href="assets/css/cinematic.css?v=22" />
   <style>.mega{opacity:0;visibility:hidden}</style>
 </head>
 <body>
@@ -153,8 +153,18 @@
   <div class="container">
     <div class="contact-grid">
       <div class="card form-card reveal-l">
-        <div class="form-success">Thanks! Your request is in. A NetGenX expert will reach out within 24 hours.</div>
-        <form data-demo-form novalidate>
+        <div class="form-success" role="status" aria-live="polite">Thanks! Your request is in. A NetGenX expert will reach out within 24 hours.</div>
+            <div class="form-error" role="alert">Something went wrong sending that. Please email <a href="mailto:solutions@netgenx.com">solutions@netgenx.com</a> directly.</div>
+        <form data-contact-form novalidate method="POST"
+              action="https://formsubmit.co/ajax/solutions@netgenx.com">
+              <!-- Delivery runs through FormSubmit, since GitHub Pages has no backend.
+                   Swap the action URL to change provider; the JS posts to whatever it says. -->
+              <input type="hidden" name="_subject" value="New enquiry from netgenx.com" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <!-- honeypot: real people leave this empty, bots fill it in -->
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off"
+                     aria-hidden="true" style="position:absolute;left:-9999px" />
           <div class="field">
             <label for="name">Full name <span class="req">*</span></label>
             <input type="text" id="name" name="name" autocomplete="name" placeholder="Jordan Lee" required>
@@ -169,7 +179,7 @@
           </div>
           <div class="field">
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+1 (416) 555-0142">
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+1 (302) 555-0142">
           </div>
           <div class="field">
             <label for="service">Service interest</label>
@@ -199,20 +209,20 @@
         <div class="card info-card">
           <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg></span>
           <h4>Email</h4>
-          <p><a href="mailto:hello@netgenx.com">hello@netgenx.com</a></p>
+          <p><a href="mailto:solutions@netgenx.com">solutions@netgenx.com</a></p>
           <p class="muted">General &amp; sales inquiries</p>
         </div>
         <div class="card info-card">
           <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span>
           <h4>Phone</h4>
-          <p><a href="tel:+18005551234">+1 (800) 555-1234</a></p>
+          <p><a href="tel:+13023026612">+1 302-302-6612</a></p>
           <p class="muted">24/7 hotline for active incidents</p>
         </div>
         <div class="card info-card">
           <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
           <h4>Headquarters</h4>
           <p>8 The Green #8817<br />Dover, DE 19901, USA</p>
-          <p class="muted">Serving clients across the United States &amp; globally</p>
+          <p class="muted">Serving clients across the United States &amp; Canada</p>
         </div>
 
         <div class="globe-wrap" style="margin-top:18px;">
@@ -320,8 +330,8 @@
         <div>
           <h5>Contact</h5>
           <div class="footer-links">
-            <a href="mailto:hello@netgenx.com">hello@netgenx.com</a>
-            <a href="tel:+18005551234">+1 (800) 555-1234</a>
+            <a href="mailto:solutions@netgenx.com">solutions@netgenx.com</a>
+            <a href="tel:+13023026612">+1 302-302-6612</a>
             <a href="contact.html">Dover, Delaware · USA</a>
             <a href="contact.html">Talk to an expert →</a>
           </div>
@@ -334,7 +344,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=17" defer></script>
+  <script src="assets/js/main.js?v=22" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
