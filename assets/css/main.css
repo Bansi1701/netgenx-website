@@ -1,5 +1,5 @@
 /* =========================================================
-   NetGenX — Main Stylesheet (component library)
+   NetGenX: Main Stylesheet (component library)
    ========================================================= */
 
 /* ---------- Reset & base ---------- */
@@ -620,6 +620,20 @@ body.cursor-hover .cursor-ring { background: rgba(37,99,235,0.08); border-color:
 .partner-name { font-weight: 700; letter-spacing: -0.01em; }
 .partner:hover .partner-name { color: var(--accent-blue); }
 
+/* monochrome brand symbols sitting beside each wordmark. Inlined SVG, so they take
+   their colour from the wordmark and follow it on hover. Sized optically, not
+   mechanically - the wide Cisco bars ride smaller than the square marks.
+   The selector outruns `.partner svg` above, which is for the decorative cyan icons. */
+.partner svg.partner-mark { width: auto; height: 17px; flex: none; display: block; color: inherit; }
+/* Per-brand heights, because equal height is not equal weight: a sparse or wide mark
+   reads louder than a compact one at the same size. Square marks (Microsoft, Palo Alto)
+   take the 17px default; these are trimmed or lifted by eye against them. */
+.partner svg.partner-mark--cisco { height: 13px; }        /* 6 thin bars, very wide */
+.partner svg.partner-mark--crowdstrike { height: 17px; }  /* fine line-art, needs size to read */
+.partner svg.partner-mark--beyondtrust { height: 16px; }  /* solid, wide monogram */
+.partner svg.partner-mark--sentinelone { height: 18px; }  /* taller than wide, needs the lift */
+.partner.has-logo .partner-mark { display: none; }   /* an official full logo supersedes the symbol */
+
 /* option B: official logos at a uniform size; wordmark shows until a file exists */
 .partner-logo { display: none; height: 28px; width: auto; max-width: 150px; object-fit: contain; }
 .partner.has-logo .partner-logo { display: block; }
@@ -628,7 +642,7 @@ body.cursor-hover .cursor-ring { background: rgba(37,99,235,0.08); border-color:
 .partner.has-logo:hover { filter: none; opacity: 1; }            /* reveal true colors on hover */
 
 /* =========================================================
-   MEGA MENU — full-width, multi-column, grouped by category
+   MEGA MENU: full-width, multi-column, grouped by category
    ========================================================= */
 .nav-links { height: var(--nav-h); }
 .nav-link { position: relative; }                 /* keep underline anchored to the link */
@@ -667,7 +681,7 @@ body.cursor-hover .cursor-ring { background: rgba(37,99,235,0.08); border-color:
 @media (max-width: 1024px) { .mega { display: none; } }   /* mobile uses the full-screen overlay */
 
 /* =========================================================
-   IMAGE CARDS — illustration header (non-square, rounded)
+   IMAGE CARDS: illustration header (non-square, rounded)
    ========================================================= */
 .has-media { padding: 0; overflow: hidden; }
 .card-media { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--accent-blue); }

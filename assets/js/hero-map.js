@@ -1,5 +1,5 @@
 /* =========================================================
-   NetGenX — Animated global-network hero background
+   NetGenX: Animated global-network hero background
    Re-implements the D3 world-map design (land + glowing
    cloud nodes + hub + shimmering arcs). Loads D3/topojson
    + world atlas from CDN; falls back to the static image

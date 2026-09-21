@@ -1,5 +1,5 @@
 /* =========================================================
-   NetGenX — Core interactions
+   NetGenX: Core interactions
    Nav, custom cursor, scroll reveal, count-up stats,
    hero word reveal, mobile menu, page veil, form.
    ========================================================= */

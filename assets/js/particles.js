@@ -1,5 +1,5 @@
 /* =========================================================
-   NetGenX — Flow Field "Data Currents" (canvas)
+   NetGenX: Flow Field "Data Currents" (canvas)
    Streamlines advected through an evolving pseudo-noise flow
    field. Silky trails, occasional bright data-packet pulses,
    cursor-driven eddies. Replaces the common dots-network look.

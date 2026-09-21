@@ -1,9 +1,9 @@
 /* =========================================================
-   NetGenX — Cinematic Engine
+   NetGenX: Cinematic Engine
    Lenis smooth scroll + GSAP ScrollTrigger driven parallax,
    pinned horizontal gallery, scrubbed kinetic manifesto,
    marquee, 3D tilt, spotlight, magnetic buttons, progress.
-   Pure progressive enhancement — everything degrades safely.
+   Pure progressive enhancement: everything degrades safely.
    ========================================================= */
 (function () {
   'use strict';
@@ -137,7 +137,7 @@
       });
     }
 
-    /* Pinned scrubbing manifesto — words light up as you scroll */
+    /* Pinned scrubbing manifesto: words light up as you scroll */
     var man = document.querySelector('[data-manifesto]');
     if (man) {
       var words = man.querySelectorAll('.manifesto-text .w');
@@ -160,7 +160,7 @@
       }
     }
 
-    /* Section reveals — hand the base .reveal set a richer, scrubless entrance */
+    /* Section reveals: hand the base .reveal set a richer, scrubless entrance */
     gsap.utils.toArray('[data-cine-reveal]').forEach(function (node) {
       gsap.from(node, {
         y: 60, opacity: 0, duration: 1, ease: 'power3.out',
