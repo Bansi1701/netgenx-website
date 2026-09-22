@@ -1,0 +1,39 @@
+name: Deploy to Cloudflare Pages
+
+# Every push that lands on main, which includes a merged pull request.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:        # lets you redeploy by hand from the Actions tab
+
+permissions:
+  contents: read            # the job only needs to read the repo
+
+# If two pushes land close together, finish the newest and drop the older one
+# rather than racing two deploys onto the same site.
+concurrency:
+  group: cloudflare-pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Publish only what belongs on the website. Without this the README, the
+      # original brief and .github itself would all be served publicly.
+      - name: Stage the site files
+        run: |
+          mkdir -p dist
+          cp ./*.html favicon.svg dist/
+          cp -R assets dist/assets
+          find dist -name '.DS_Store' -delete
+          echo "staging $(find dist -type f | wc -l) files"
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=netgenx-website --branch=main
