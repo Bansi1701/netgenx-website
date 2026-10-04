@@ -148,6 +148,114 @@
   document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = '2026'; });
 
   /* ---------- Contact form (demo handler) ---------- */
+  /* ---------- Case studies carousel ----------
+     Auto-advances, but stops the moment a person is likely reading or steering:
+     hover, keyboard focus, scrolled out of view, or a hidden tab. The explicit
+     pause button exists because auto-moving content needs a stop control that
+     works for keyboard users, not just a hover that they never trigger. */
+  const casesWrap = document.querySelector('.cases-wrap');
+  if (casesWrap) {
+    const track = casesWrap.querySelector('.cases');
+    const prevBtn = casesWrap.querySelector('.cases-prev');
+    const nextBtn = casesWrap.querySelector('.cases-next');
+    const playBtn = casesWrap.querySelector('.cases-play');
+    const counter = casesWrap.querySelector('.cases-count');
+    const cards = Array.from(track.children);
+    const DELAY = 4500;
+    let timer = null;
+    let pausedByUser = false;
+
+    const stepWidth = () => {
+      if (cards.length < 2) return track.clientWidth;
+      return cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().left;
+    };
+    const maxScroll = () => track.scrollWidth - track.clientWidth;
+    const current = () => {
+      /* At the far end the track stops short of a whole card, so rounding gives
+         one less than the real final stop. Report the true last index there, or
+         the wrap-to-start condition can never be satisfied. */
+      if (track.scrollLeft >= maxScroll() - 2) return lastIndex();
+      return Math.round(track.scrollLeft / stepWidth());
+    };
+
+    /* Last index you can actually scroll to: the track stops short of
+       cards.length - 1 because several cards are visible at once. */
+    const lastIndex = () => Math.ceil(maxScroll() / stepWidth());
+
+    /* Where we intend to be. A smooth scroll is still travelling when the next
+       decision gets made, so steering off scrollLeft would read a stale position
+       and the autoplay would never reach the end to wrap. */
+    let desired = 0;
+
+    function goTo(i) {
+      const target = Math.max(0, Math.min(i, lastIndex()));
+      desired = target;
+      track.scrollTo({ left: Math.min(target * stepWidth(), maxScroll()) });
+      /* Update from the target, not from scrollLeft: a smooth scroll has not
+         landed yet, so reading scrollLeft here would leave the counter and the
+         buttons a step behind, and prev would stay disabled after the first move. */
+      sync(target);
+    }
+
+    function sync(idx) {
+      const i = (idx === undefined) ? current() : idx;
+      const last = lastIndex();
+      casesWrap.classList.toggle('can-prev', i > 0);
+      casesWrap.classList.toggle('can-next', i < last);
+      prevBtn.disabled = i <= 0;
+      nextBtn.disabled = i >= last;
+      /* At the final stop the last card is fully visible, so report the total
+         rather than the leftmost card's number. */
+      const shown = (i >= last) ? cards.length : i + 1;
+      if (counter) counter.textContent = shown + ' / ' + cards.length;
+    }
+
+    function advance() {
+      /* wrap back to the first card rather than stalling at the end */
+      goTo(desired >= lastIndex() ? 0 : desired + 1);
+    }
+
+    function play() {
+      if (prefersReduced || pausedByUser || timer) return;
+      timer = setInterval(advance, DELAY);
+    }
+    function halt() { if (timer) { clearInterval(timer); timer = null; } }
+    /* a manual move should not be immediately overridden by the timer */
+    function nudge(fn) { halt(); fn(); if (!pausedByUser) setTimeout(play, DELAY); }
+
+    prevBtn.addEventListener('click', () => nudge(() => goTo(current() - 1)));
+    nextBtn.addEventListener('click', () => nudge(() => goTo(current() + 1)));
+    track.addEventListener('scroll', () => requestAnimationFrame(() => {
+      desired = current();
+      sync();
+    }), { passive: true });
+
+    casesWrap.addEventListener('mouseenter', halt);
+    casesWrap.addEventListener('mouseleave', play);
+    casesWrap.addEventListener('focusin', halt);
+    casesWrap.addEventListener('focusout', () => { if (!casesWrap.contains(document.activeElement)) play(); });
+    track.addEventListener('pointerdown', halt, { passive: true });
+
+    if (playBtn) {
+      playBtn.addEventListener('click', () => {
+        pausedByUser = !pausedByUser;
+        playBtn.setAttribute('aria-pressed', String(pausedByUser));
+        playBtn.setAttribute('aria-label', pausedByUser ? 'Resume automatic scrolling' : 'Pause automatic scrolling');
+        if (pausedByUser) halt(); else play();
+      });
+    }
+
+    document.addEventListener('visibilitychange', () => { document.hidden ? halt() : play(); });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        entries.forEach((e) => (e.isIntersecting ? play() : halt()));
+      }, { threshold: 0.25 }).observe(casesWrap);
+    } else {
+      play();
+    }
+    sync();
+  }
+
   /* Contact form: posts to the endpoint in the form's action (a third-party form
      service, since a static host has no backend) and keeps the inline success state
      instead of handing the visitor off to the provider's own page. */

@@ -14,3 +14,6 @@ Thumbs.db
 .dev.vars*
 !.dev.vars.example
 !.env.example
+
+# Source material kept in the working folder, not for the public repo
+*.pdf
