@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About NetGenX | Enterprise IT Infrastructure Solutions</title>
-  <meta name="description" content="NetGenX is an IT infrastructure solutions provider helping US businesses build secure, reliable digital foundations, backed by fifteen years of experience." />
+  <title>Datacenter, Virtualization & Disaster Recovery | NetGenX</title>
+  <meta name="description" content="NetGenX designs and runs datacenter compute, all-flash storage, virtualization and immutable backup, with tested failover and proven RTO and RPO targets." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -125,124 +125,118 @@
   </div>
 
   <main id="main">
-<!-- ================= PAGE HERO ================= -->
-    <section class="page-hero">
-      <svg viewBox="0 0 200 220" fill="none" style="position:absolute;right:4%;top:26%;width:300px;opacity:.55" aria-hidden="true">
-        <defs>
-          <linearGradient id="about-glyph-g" x1="0" y1="0" x2="200" y2="220" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#0EA5E9"/><stop offset="1" stop-color="#1E40AF"/>
-          </linearGradient>
-        </defs>
-        <path d="M100 8l78 30v58c0 52-33 92-78 110C55 188 22 148 22 96V38l78-30z" stroke="url(#about-glyph-g)" stroke-width="1.6" opacity="0.7"/>
-        <path class="draw-path" d="M100 24l64 24v50c0 43-27 76-64 91-37-15-64-48-64-91V48l64-24z" stroke="#0EA5E9" stroke-width="1.4" opacity="0.5"/>
-        <path d="M72 104l20 20 38-44" stroke="#10B981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-      </svg>
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span> About</nav>
-        <span class="eyebrow">About NetGenX</span>
-        <h1>Your trusted partner in <span class="text-grad">enterprise IT infrastructure.</span></h1>
-        <p class="lead">NetGenX is a dynamic and forward-thinking IT infrastructure solutions provider, dedicated to empowering businesses with robust and secure digital foundations. With a strong focus on exceptional service and cutting-edge technology, we are your trusted partner in navigating a complex IT landscape.</p>
-        <div class="hero-cta" style="margin-top:28px;">
-          <a class="btn btn-primary" href="contact.html">Work with us
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a class="btn btn-ghost" href="services.html">Explore services
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span>/</span>
+      <a href="services.html">Services</a><span>/</span>
+      Datacenter &amp; Disaster Recovery
+    </nav>
+    <span class="eyebrow">Datacenter &amp; Disaster Recovery</span>
+    <h1>Taking a backup is easy. <span class="text-grad">Restoring under pressure is not.</span></h1>
+    <p class="lead">We design and run the compute, storage and virtualization underneath your applications, then build the recovery path that brings them back. Every RTO and RPO we set is one we have tested with a real failover, not one written into a document.</p>
+    <div class="hero-cta" style="margin-top:28px;">
+      <a class="btn btn-primary btn-lg pulse" href="contact.html">Talk to the team <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost btn-lg" href="services.html">See all services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
 
-    <!-- ================= MISSION ================= -->
+    <!-- ================= THE CHALLENGE ================= -->
     <section class="section">
       <div class="container">
-        <div class="grid cols-2 reveal" data-stagger="90">
+        <div class="section-head reveal">
+          <span class="eyebrow">The challenge</span>
+          <h2>Where the core lets you down.</h2>
+          <p>These three turn up almost every time we look at an estate that has never actually been failed over.</p>
+        </div>
+        <div class="grid cols-3 reveal" data-stagger="90">
           <div class="card">
-            <span class="eyebrow">Our mission</span>
-            <h3 style="margin:10px 0 12px;">To be the preferred choice for reliable, innovative IT infrastructure.</h3>
-            <p>We strive to exceed client expectations by providing tailored solutions that enhance productivity, security and overall business performance.</p>
+            <h3>Backups the attacker deletes</h3>
+            <p>Ransomware reaches the backup server because it shares a domain and admin credentials with production, so the one clean copy disappears with everything else.</p>
           </div>
           <div class="card">
-            <span class="eyebrow">Our vision</span>
-            <h3 style="margin:10px 0 12px;">To lead the way in IT infrastructure solutions.</h3>
-            <p>Driving digital transformation and enabling businesses to achieve their full potential.</p>
+            <h3>Replication nobody has tested</h3>
+            <p>Jobs fail quietly for weeks, or the standby volumes look consistent while the database comes up corrupt because the application was never quiesced.</p>
+          </div>
+          <div class="card">
+            <h3>Hardware past its refresh</h3>
+            <p>Hosts and arrays are out of warranty, the cluster has no spare capacity for a failure, and every new workload still means buying another box.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= OUR APPROACH ================= -->
+    <!-- ================= HOW WE DO IT ================= -->
     <section class="section section--tight">
-      <div class="container narrow">
-        <span class="eyebrow reveal">Our approach</span>
-        <h2 class="reveal" style="font-size: var(--text-h2); margin: 16px 0 22px;">Long-term partnerships, built on <span class="text-grad">trust and transparency.</span></h2>
-        <p class="lead reveal">We believe in building long-term partnerships with our clients based on trust, transparency and exceptional service. Our team of highly skilled IT professionals is committed to understanding your unique business needs and delivering tailored solutions that address your challenges and drive your success.</p>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">How we do it</span>
+          <h2>From a paper plan to a proven failover.</h2>
+          <p>We size the platform first, then build the copies, then run the failover, because a recovery target only counts once it has been met.</p>
+        </div>
+        <div class="steps reveal" data-stagger="120">
+          <div class="step">
+            <span class="n"></span>
+            <div>
+              <h4>Rank workloads, set targets</h4>
+              <p>We put an RTO and RPO against each application rather than one number for the whole estate, and map what each one needs to start: directory, DNS, database, license server.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="n"></span>
+            <div>
+              <h4>Build the platform</h4>
+              <p>We consolidate workloads onto all-flash or scale-out storage and hyperconverged or traditional hosts, sized so the cluster survives a host loss. Where a hypervisor change makes sense, we plan and run the migration.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="n"></span>
+            <div>
+              <h4>Make the copies immutable</h4>
+              <p>Backups land on storage that cannot be altered or deleted for a set retention, held outside the production domain with its own credentials, so an intruder with domain admin cannot reach them.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="n"></span>
+            <div>
+              <h4>Fail over and back</h4>
+              <p>We replicate to the recovery site, run a real failover on a schedule, time it against the targets, and fix what slipped. Failback is rehearsed too, because that is the half most plans skip.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <hr class="glow-line">
-
-    <!-- ================= OUR VALUES ================= -->
-    <section class="section">
+    <!-- ================= TOOLS WE USE ================= -->
+    <section class="section section--tight">
       <div class="container">
         <div class="section-head center reveal">
-          <span class="eyebrow center">Why choose NetGenX</span>
-          <h2>Four reasons clients <span class="text-grad">stay with us.</span></h2>
-          <p>Expertise, focus, innovation and reliability, applied to every engagement we take on.</p>
+          <span class="eyebrow center">Tools we use</span>
+          <h2>Platform-neutral, <span class="text-grad">chosen to fit your estate.</span></h2>
+          <p>We deploy and operate what suits your environment and licensing, rather than reselling one stack to everybody.</p>
         </div>
-        <div class="grid cols-4 reveal" data-stagger="90">
-          <div class="value">
-            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v5c0 4.4-3 8.3-7 9.5C8 19.3 5 15.4 5 11V6l7-3z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg></span>
-            <h4>Deep expertise</h4>
-            <p>Our team holds in-depth knowledge of the latest IT trends and technologies, across multiple vendors and platforms rather than a single stack.</p>
-          </div>
-          <div class="value">
-            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.3-9.5-9A5.2 5.2 0 0112 6a5.2 5.2 0 019.5 6c-2.5 4.7-9.5 9-9.5 9z"/></svg></span>
-            <h4>Client-first</h4>
-            <p>We prioritize our clients' needs and deliver solutions that exceed expectations, operating as an extension of your team rather than a vendor at arm's length.</p>
-          </div>
-          <div class="value">
-            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
-            <h4>Innovation</h4>
-            <p>We embrace cutting-edge technologies to provide innovative and effective solutions, chosen for what they solve rather than for novelty.</p>
-          </div>
-          <div class="value">
-            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-            <h4>Reliability</h4>
-            <p>We are committed to delivering reliable, high-quality services, and to being straight with you about what we can and cannot promise.</p>
-          </div>
+        <div class="chips reveal" data-stagger="70">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg> VMware</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg> Nutanix</span>
+          <span class="chip"><svg class="tool-mark tool-mark--veeam" viewBox="0 9.6 24 4.8" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6.63 9.842c-1.104 0-2 .945-2 2.101v.108c0 1.322.846 2.038 1.974 2.1.051.007.108.007.16.007.435 0 .794-.115 1.195-.361.04-.023.201-.132.361-.338.132-.166.138-.411 0-.543-.2-.189-.412-.086-.595.074-.292.246-.516.442-1.1.442-.55 0-1.064-.316-1.19-.94 0-.023.01-.045.034-.045H8.16a.473.473 0 0 0 .47-.504c0-1.156-.894-2.1-1.999-2.1zm4.466 0c-1.1 0-1.996.945-1.996 2.101v.108c0 1.322.846 2.038 1.974 2.1.052.007.11.007.16.007.435 0 .795-.115 1.196-.361.04-.023.2-.132.361-.338.132-.166.137-.411 0-.543-.2-.189-.413-.086-.596.074-.292.246-.515.442-1.1.442-.549 0-1.063-.316-1.189-.94-.006-.023.01-.045.028-.045h2.691a.473.473 0 0 0 .47-.504c-.007-1.156-.9-2.1-1.999-2.1zm-6.89.04a.4.4 0 0 0-.344.223l-1.42 3.063c-.034.063-.062.11-.136.11-.075 0-.105-.047-.14-.11l-1.42-3.057a.38.38 0 0 0-.53-.177.428.428 0 0 0-.172.56l1.39 2.828.16.32a.8.8 0 0 0 .712.46.791.791 0 0 0 .709-.46l.16-.32 1.385-2.834a.423.423 0 0 0-.166-.56.376.376 0 0 0-.188-.045zm11.362 0a.762.762 0 0 0-.504.188.808.808 0 0 0-.207.27l-1.59 3.137c0 .005-.007.006-.007.01v.007a.434.434 0 0 0 .03.442c0 .005.005.006.005.01 0 .007.006.005.006.01a.372.372 0 0 0 .516.077s.005 0 .005-.006a.083.083 0 0 0 .024-.017l.015-.018.006-.006a.485.485 0 0 0 .076-.103l.057-.125.332-.7c.006-.017.028-.027.045-.027h1.484c.195 0 .354-.167.354-.379 0-.206-.159-.377-.354-.377h-1.099a.033.033 0 0 1-.03-.046l.08-.172.602-1.207v-.006s0-.006.006-.006c.011-.023.04-.108.098-.125.034-.012.063-.012.086 0 .063.017.084.091.113.148l1.455 3.022a.393.393 0 0 0 .48.195s.006 0 .006-.006l.035-.017c.006 0 .007-.006.012-.006 0 0 .006 0 .006-.006.006 0 .006-.006.012-.006s.01-.004.01-.01c.006 0 .006-.006.011-.006.006-.006.012-.012.018-.012l.017-.017.006-.006a.408.408 0 0 0 .092-.498l-1.598-3.154a.79.79 0 0 0-.709-.45zm3.508 0c-.39 0-.709.332-.709.778v3.018c0 .183.104.354.264.406.263.086.486-.143.486-.412l-.058-2.938a.03.03 0 0 1 .052-.017l1.442 2.93c.137.28.367.449.625.449.257 0 .49-.167.623-.448l1.449-2.935c.01-.029.05-.019.05.016l-.056 2.955c0 .234.177.423.389.412.206-.006.367-.207.367-.43V10.66c.01-.452-.31-.77-.7-.777a.684.684 0 0 0-.61.394c-.361.739-1.426 2.93-1.426 2.936-.006.01-.03.064-.075.064-.04 0-.068-.047-.074-.064-.35-.727-1.047-2.164-1.408-2.908-.143-.287-.38-.422-.63-.422zm-12.45.647c.697 0 1.14.527 1.208 1.145 0 .023-.012.045-.035.045H5.47c-.023-.006-.033-.022-.033-.045.074-.607.49-1.145 1.19-1.145zm4.47 0h.002c.697.001 1.138.527 1.207 1.145 0 .023-.013.045-.035.045H9.94c-.023-.006-.04-.022-.034-.045.075-.606.493-1.144 1.19-1.145z"/></svg> Veeam</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg> NetApp</span>
+          <span class="chip"><svg class="tool-mark tool-mark--dell" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.963 14.6V9.324h1.222v4.204h2.14v1.07h-3.362zm-9.784-3.288l2.98-2.292c.281.228.56.458.841.687l-2.827 2.14.611.535 2.827-2.216c.281.228.56.458.841.688a295.83 295.83 0 0 1-2.827 2.216l.61.536 2.83-2.295-.001-1.986h1.223v4.204h2.216v1.07h-3.362v-1.987c-.995.763-1.987 1.529-2.981 2.292l-2.981-2.292c-.144.729-.653 1.36-1.312 1.694-.285.147-.597.24-.915.276-.183.022-.367.017-.551.017H3.516V9.325H5.69a2.544 2.544 0 0 1 1.563.557c.454.36.778.872.927 1.43m-3.516-.917v3.21l.953-.001a1.377 1.377 0 0 0 1.036-.523 1.74 1.74 0 0 0 .182-1.889 1.494 1.494 0 0 0-.976-.766c-.166-.04-.338-.03-.507-.032h-.688zM11.82 0h.337a11.94 11.94 0 0 1 5.405 1.373 12.101 12.101 0 0 1 4.126 3.557A11.93 11.93 0 0 1 24 11.82v.36a11.963 11.963 0 0 1-3.236 8.033A11.967 11.967 0 0 1 12.182 24h-.361a11.993 11.993 0 0 1-4.145-.806 12.04 12.04 0 0 1-4.274-2.836A12.057 12.057 0 0 1 .576 15.67 12.006 12.006 0 0 1 0 12.181v-.361a11.924 11.924 0 0 1 1.992-6.396 12.211 12.211 0 0 1 4.71-4.172A11.875 11.875 0 0 1 11.82 0m-.153 1.23a10.724 10.724 0 0 0-6.43 2.375 10.78 10.78 0 0 0-3.319 4.573 10.858 10.858 0 0 0 .193 8.12 10.788 10.788 0 0 0 3.546 4.421 10.698 10.698 0 0 0 4.786 1.946c1.456.209 2.955.124 4.376-.26a10.756 10.756 0 0 0 5.075-3.062 10.742 10.742 0 0 0 2.686-5.28 10.915 10.915 0 0 0-.122-4.682 10.77 10.77 0 0 0-7.098-7.626 10.78 10.78 0 0 0-3.693-.525z"/></svg> Dell Technologies</span>
         </div>
-      </div>
-    </section>
-
-    <hr class="glow-line">
-
-    <!-- ================= LEADERSHIP ================= -->
-    <section class="section">
-      <div class="container narrow">
-        <span class="eyebrow reveal">Leadership</span>
-        <h2 class="reveal" style="font-size: var(--text-h2); margin: 16px 0 22px;">Experience across <span class="text-grad">industries and sizes.</span></h2>
-        <p class="lead reveal">Our founder brings more than fifteen years of experience serving clients across a wide range of industries and company sizes, from mid-market operations to large multi-site enterprises. That experience shapes how every engagement runs: understand the business first, then design the infrastructure around it.</p>
       </div>
     </section>
 
     <!-- ================= CTA BANNER ================= -->
     <section class="section">
       <div class="container">
-        <div class="cta-banner reveal-scale">
-          <span class="eyebrow center">Let's talk</span>
-          <h2>Want this team watching your environment?</h2>
-          <p>Book a free, no-obligation assessment. We'll map your attack surface and hand you a prioritized plan within 24 hours, no commitment required.</p>
-          <div class="hero-cta">
-            <a class="btn btn-primary btn-lg pulse" href="contact.html">Schedule a Free Consultation
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-            <a class="btn btn-ghost btn-lg" href="services.html">See all services</a>
-          </div>
+        <div class="cta-banner reveal">
+          <h2>Want to see what this looks like for your estate?</h2>
+          <p>Tell us where you are today. The NetGenX team will come back within one business day to arrange a 30 minute conversation.</p>
+          <a class="btn btn-primary btn-lg pulse" href="contact.html">Talk to the team <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </section>
-  </main>
+</main>
 
   <footer class="footer">
     <div class="container">

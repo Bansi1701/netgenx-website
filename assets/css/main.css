@@ -329,6 +329,7 @@ body.menu-open .mobile-menu a { animation: mLinkIn 0.5s var(--ease-out) forwards
    The double class outruns the responsive `.stats` rules further down the file. */
 .stats.stats--pair { grid-template-columns: repeat(2, minmax(0, 300px)); justify-content: center; }
 .stats.stats--trio { grid-template-columns: repeat(3, minmax(0, 300px)); justify-content: center; }
+.stats.stats--solo { grid-template-columns: minmax(0, 320px); justify-content: center; }
 
 /* ---------- Split / Why section ---------- */
 .split { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(36px, 5vw, 72px); align-items: center; }
@@ -488,7 +489,22 @@ body.menu-open .mobile-menu a { animation: mLinkIn 0.5s var(--ease-out) forwards
 .chips { display: flex; flex-wrap: wrap; gap: 10px; }
 .chip { display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; border-radius: var(--radius-pill); border: 1px solid var(--border); background: var(--bg-surface); font-size: 13.5px; color: var(--text-secondary); font-weight: 500; transition: border-color var(--dur) var(--ease-out), color var(--dur) var(--ease-out); }
 .chip:hover { border-color: var(--border-accent); color: #fff; }
-.chip svg { width: 15px; height: 15px; color: var(--accent-cyan); }
+/* Was accent cyan. With real brand marks in the row, a cyan placeholder glyph
+   next to an ink-coloured logo reads as a mistake, so both now take the chip's colour. */
+.chip svg { width: 15px; height: 15px; color: inherit; }
+/* Brand marks in tool chips, following the partner bar: logos take the chip's
+   own colour and are sized per brand, because equal height is not equal weight.
+   A mark three times wider than it is tall shouts at the same pixel height. */
+.chip svg.tool-mark { width: auto; height: 14px; max-width: 64px; color: inherit; }
+.chip svg.tool-mark--cisco { height: 9px; }    /* 2.9:1 */
+.chip svg.tool-mark--zoho { height: 9px; }     /* 2.9:1 */
+.chip svg.tool-mark--lenovo { height: 9px; }   /* 3:1 */
+.chip svg.tool-mark--veeam { height: 7px; }    /* 5:1 */
+.chip svg.tool-mark--beyondtrust { height: 12px; }
+.chip svg.tool-mark--crowdstrike { height: 12px; }
+
+/* Centred like the partner bar on the home page. */
+.chips { justify-content: center; }
 
 /* ---------- Footer ---------- */
 .footer { position: relative; border-top: 1px solid var(--border); padding-top: clamp(56px, 7vw, 84px); padding-bottom: 32px; background: linear-gradient(180deg, transparent, rgba(37, 99, 235,0.04)); }
